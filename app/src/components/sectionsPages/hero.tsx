@@ -1,0 +1,66 @@
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
+
+export default function Hero() {
+  return (
+    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+      {/* Background with overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/placeholder.svg?height=1080&width=1920"
+          alt="Fachada moderna de edifício"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Excelência em Engenharia de Fachadas
+          </h1>
+          <p className="text-xl md:text-2xl text-white/90 mb-8">
+            Soluções completas e inovadoras para projetos de fachadas com expertise técnica e compromisso com a
+            qualidade.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button size="lg" className="text-base">
+              Solicitar Orçamento
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-base bg-white/10 text-white border-white/30 hover:bg-white/20"
+            >
+              Conheça Nossos Projetos
+            </Button>
+          </div>
+
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <p className="text-3xl md:text-4xl font-bold text-white">+200</p>
+              <p className="text-white/80">Projetos Realizados</p>
+            </div>
+            <div className="text-center">
+              <p className="text-3xl md:text-4xl font-bold text-white">15</p>
+              <p className="text-white/80">Anos de Experiência</p>
+            </div>
+            <div className="text-center">
+              <p className="text-3xl md:text-4xl font-bold text-white">+50</p>
+              <p className="text-white/80">Profissionais</p>
+            </div>
+            <div className="text-center">
+              <p className="text-3xl md:text-4xl font-bold text-white">100%</p>
+              <p className="text-white/80">Satisfação</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
