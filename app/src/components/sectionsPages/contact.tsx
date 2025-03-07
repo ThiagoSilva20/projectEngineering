@@ -5,7 +5,7 @@ import { MapPin, Phone, Mail, Clock, Send } from "lucide-react"
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20">
+    <section id="contato" className="py-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Entre em Contato</h2>
@@ -105,7 +105,7 @@ export default function Contact() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="outline" className="flex-1">
-                  <Phone className="mr-2 h-4 w-4" /> Ligar Agora
+                  <Phone href="Tell:21993392724" className="mr-2 h-4 w-4" /> Ligar Agora
                 </Button>
                 <Button className="flex-1 bg-green-600 hover:bg-green-700">WhatsApp</Button>
               </div>

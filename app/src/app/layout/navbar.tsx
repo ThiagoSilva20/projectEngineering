@@ -1,89 +1,103 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
+      setIsScrolled(window.scrollY > 50);
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen)
-  }
-
-  const navLinks = [
-    { name: "Início", href: "#" },
-    { name: "Serviços", href: "#services" },
-    { name: "Projetos", href: "#portfolio" },
-    { name: "Equipe", href: "#team" },
-    { name: "Depoimentos", href: "#testimonials" },
-    { name: "Contato", href: "#contact" },
-  ]
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4",
-      )}
-    >
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center">
-          <span className="text-2xl font-bold text-primary">FACADE</span>
-          <span className="text-2xl font-bold ml-1">ENGENHARIA</span>
+    <header className={cn(
+      "fixed w-full top-0 z-50 transition-all duration-300",
+      isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+    )}>
+      <div className="container mx-auto px-4 flex justify-between items-center">
+        {/* Logo */}
+        <Link href="/" className={cn(
+          "text-xl font-bold transition-colors",
+          isScrolled ? "text-black" : "text-white"
+        )}>
+          WMoura ENGENHARIA
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-gray-700 hover:text-primary font-medium transition-colors"
-            >
-              {link.name}
-            </Link>
-          ))}
-          <Button>Orçamento</Button>
+        <nav className="hidden md:flex space-x-6">
+          <Link href="/" className={cn(
+            "transition-colors", 
+            isScrolled ? "text-black hover:text-primary" : "text-white hover:text-gray-200"
+          )}>
+            Início
+          </Link>
+          <Link href="#portfolio" className={cn(
+            "transition-colors", 
+            isScrolled ? "text-black hover:text-primary" : "text-white hover:text-gray-200"
+          )}>
+            Projetos
+          </Link>
+          <Link href="#engenheiro" className={cn(
+            "transition-colors", 
+            isScrolled ? "text-black hover:text-primary" : "text-white hover:text-gray-200"
+          )}>
+            Engenheiro
+          </Link>
+          <Link href="#contato" className={cn(
+            "transition-colors", 
+            isScrolled ? "text-black hover:text-primary" : "text-white hover:text-gray-200"
+          )}>
+            Contato
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-gray-700" onClick={toggleMenu} aria-label="Toggle menu">
+        <button 
+          className={cn(
+            "md:hidden transition-colors",
+            isScrolled ? "text-black" : "text-white"
+          )}
+          onClick={toggleMenu}
+          aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+        >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-      </div>
 
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-lg">
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-gray-700 hover:text-primary font-medium py-2 transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-md p-4">
+            <nav className="flex flex-col space-y-4">
+              <Link href="/" className="text-black hover:text-primary transition-colors" onClick={closeMenu}>
+                Início
               </Link>
-            ))}
-            <Button className="w-full">Orçamento</Button>
+              <Link href="#servico" className="text-black hover:text-primary transition-colors" onClick={closeMenu}>
+                Serviços
+              </Link>
+              <Link href="/projetos" className="text-black hover:text-primary transition-colors" onClick={closeMenu}>
+                Projetos
+              </Link>
+              <Link href="/sobre" className="text-black hover:text-primary transition-colors" onClick={closeMenu}>
+                Sobre
+              </Link>
+              <Link href="/contato" className="text-black hover:text-primary transition-colors" onClick={closeMenu}>
+                Contato
+              </Link>
+            </nav>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </header>
-  )
+  );
 }
-

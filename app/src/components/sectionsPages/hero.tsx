@@ -1,14 +1,15 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export default function Hero() {
   return (
-    <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <section id="inicio" className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/placeholder.svg?height=1080&width=1920"
+          src="/image/fachada3.png"
           alt="Fachada moderna de edifício"
           fill
           className="object-cover"
@@ -33,10 +34,11 @@ export default function Hero() {
             </Button>
             <Button
               size="lg"
+              
               variant="outline"
               className="text-base bg-white/10 text-white border-white/30 hover:bg-white/20"
             >
-              Conheça Nossos Projetos
+              <Link href="#servico">Conheça Nossos Projetos</Link>
             </Button>
           </div>
 

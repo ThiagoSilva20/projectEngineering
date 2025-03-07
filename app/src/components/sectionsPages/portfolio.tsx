@@ -1,37 +1,36 @@
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+
 
 export default function Portfolio() {
   const projects = [
     {
       title: "Edifício Comercial Aurora",
       description: "Fachada em pele de vidro com sistema spider glass",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/image/fachada1.png",
       category: "Comercial",
     },
     {
       title: "Residencial Horizonte",
       description: "Fachada ventilada com painéis de alumínio composto",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/image/chao.png",
       category: "Residencial",
     },
     {
       title: "Centro Empresarial Vértice",
       description: "Fachada cortina com proteção solar integrada",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/image/interno1.png",
       category: "Corporativo",
     },
     {
       title: "Shopping Meridiano",
       description: "Retrofit de fachada com sistema unitizado",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/image/cobertura.png",
       category: "Comercial",
     },
     {
       title: "Hospital São Lucas",
       description: "Fachada com painéis fotovoltaicos integrados",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/image/parede.png",
       category: "Institucional",
     },
     {
@@ -48,8 +47,8 @@ export default function Portfolio() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Nossos Projetos</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Conheça alguns dos nossos principais projetos de engenharia de fachadas realizados para clientes em diversos
-            segmentos.
+              Conheça alguns dos nossos principais projetos de engenharia de fachadas realizados para clientes em diversos
+              segmentos.
           </p>
         </div>
 
@@ -71,23 +70,10 @@ export default function Portfolio() {
                 </span>
                 <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
                 <p className="text-white/80 mb-4">{project.description}</p>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="text-white border-white/30 bg-transparent hover:bg-white/20"
-                >
-                  Ver Detalhes
-                </Button>
+
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="group">
-            Ver Todos os Projetos
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
         </div>
       </div>
     </section>
