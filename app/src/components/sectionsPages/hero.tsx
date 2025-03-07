@@ -28,31 +28,34 @@ export default function Hero() {
             qualidade.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="text-base">
-              Solicitar Orçamento
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+
+            <Link href="#contato">
+              <Button size="lg" className="text-base">
+                Solicitar Orçamento
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
             <Button
               size="lg"
-              
+
               variant="outline"
               className="text-base bg-white/10 text-white border-white/30 hover:bg-white/20"
             >
-              <Link href="#servico">Conheça Nossos Projetos</Link>
+              <Link href="#portfolio">Conheça Nossos Projetos</Link>
             </Button>
           </div>
 
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-white">+200</p>
+              <p className="text-3xl md:text-4xl font-bold text-white">+100</p>
               <p className="text-white/80">Projetos Realizados</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-white">15</p>
+              <p className="text-3xl md:text-4xl font-bold text-white">12</p>
               <p className="text-white/80">Anos de Experiência</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-white">+50</p>
+              <p className="text-3xl md:text-4xl font-bold text-white">+15</p>
               <p className="text-white/80">Profissionais</p>
             </div>
             <div className="text-center">

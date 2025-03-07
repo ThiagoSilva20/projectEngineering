@@ -1,7 +1,12 @@
+
+"use client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react"
+import { FaWhatsapp } from "react-icons/fa";
+
+
 
 export default function Contact() {
   return (
@@ -66,24 +71,23 @@ export default function Contact() {
                   <MapPin className="h-6 w-6 mr-4 mt-1" />
                   <div>
                     <p className="font-medium mb-1">Endereço</p>
-                    <p>Av. Paulista, 1000, Bela Vista</p>
-                    <p>São Paulo - SP, 01310-100</p>
+                    <p>Rua hidrolina, S/N Lote 36 Quadra 215</p>
+                    <p>Guaratiba - CEP 23031-160</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <Phone className="h-6 w-6 mr-4 mt-1" />
                   <div>
                     <p className="font-medium mb-1">Telefone</p>
-                    <p>+55 (11) 3000-0000</p>
-                    <p>+55 (11) 99000-0000</p>
+                    <p>+55 21 4101-2053</p>
+                    <p>+ 55 21 98179-9852</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <Mail className="h-6 w-6 mr-4 mt-1" />
                   <div>
                     <p className="font-medium mb-1">Email</p>
-                    <p>contato@facadeengenharia.com.br</p>
-                    <p>comercial@facadeengenharia.com.br</p>
+                    <p>engenharia@wmoura.eng.br</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -105,9 +109,9 @@ export default function Contact() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="outline" className="flex-1">
-                  <Phone href="Tell:21993392724" className="mr-2 h-4 w-4" /> Ligar Agora
+                  <Phone href="tel:+5521981799852" className="mr-2 h-4 w-4" /> Ligar Agora
                 </Button>
-                <Button className="flex-1 bg-green-600 hover:bg-green-700">WhatsApp</Button>
+                <Button onClick={() => window.open("https://wa.me/5521981799852", "_blank")} className="flex-1 bg-green-600 hover:bg-green-700"><FaWhatsapp />WhatsApp</Button>
               </div>
             </div>
           </div>

@@ -5,21 +5,21 @@ export default function Testimonials() {
   const testimonials = [
     {
       quote:
-        "A equipe da Facade Engenharia foi fundamental para o sucesso do nosso projeto. Profissionais altamente qualificados e comprometidos com a excelência.",
+        "A equipe da WMoura Engenharia foi fundamental para o sucesso do nosso projeto. Profissionais altamente qualificados e comprometidos com a excelência.",
       author: "Ricardo Almeida",
       company: "Construtora Horizonte",
       role: "Diretor de Obras",
     },
     {
       quote:
-        "Excelente trabalho técnico e atendimento impecável. Os projetos de fachada desenvolvidos superaram nossas expectativas em termos de qualidade e inovação.",
+        "Excelente trabalho técnico e atendimento impecável. Os projetos de fachada desenvolvidos para o WMoura Engenharia superaram nossas expectativas em termos de qualidade e inovação.",
       author: "Mariana Santos",
       company: "MS Arquitetura",
       role: "Arquiteta Titular",
     },
     {
       quote:
-        "Contratamos a Facade para o retrofit da fachada do nosso edifício corporativo e o resultado foi excepcional. Recomendo fortemente os serviços da empresa.",
+      "Contratamos a WMoura Engenharia para o retrofit da fachada do nosso edifício corporativo e o resultado foi excepcional. Recomendo fortemente os serviços da WMoura Engenharia.",
       author: "Paulo Mendonça",
       company: "Grupo Empresarial Vértice",
       role: "Gerente de Facilities",

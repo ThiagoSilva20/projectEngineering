@@ -1,9 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { MessageCircle, X } from "lucide-react"
+import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Whatsappbutton() {
   const [isVisible, setIsVisible] = useState(false)
@@ -58,9 +59,9 @@ export default function Whatsappbutton() {
 
       <Button
         className="h-16 w-16 rounded-full bg-green-600 hover:bg-green-700 shadow-lg"
-        onClick={() => window.open("https://wa.me/5511900000000", "_blank")}
+        onClick={() => window.open("https://wa.me/5521981799852", "_blank")}
       >
-        <MessageCircle className="h-8 w-8" />
+        <FaWhatsapp className="h-8 w-8" />
         <span className="sr-only">Contato via WhatsApp</span>
       </Button>
     </div>

@@ -36,7 +36,7 @@ export default function Portfolio() {
     {
       title: "Condomínio Parque das Artes",
       description: "Fachada mista com elementos cerâmicos e vidro",
-      image: "/placeholder.svg?height=600&width=800",
+      image: "/image/cobertura2.jpg",
       category: "Residencial",
     },
   ]

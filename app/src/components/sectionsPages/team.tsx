@@ -1,17 +1,16 @@
 import Image from "next/image"
-import { Linkedin, Mail } from "lucide-react"
+import { Linkedin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
 export default function Team() {
   const teamMembers = [
     {
-      name: "Carlos Oliveira",
-      role: "Diretor de Engenharia",
-      bio: "Engenheiro Civil com mais de 20 anos de experiência em projetos de fachadas para edifícios de grande porte.",
-      image: "/image/R.jpeg",
+      name: "Walmir Moura",
+      role: "Engenheiro",
+      bio: "Mais de 12 anos de experiência em engenharia, atuando como Diretor na W.Moura Engenharia, Proprietário da Workx Prestadora de Serviços e Fiscal de Contrato na Petrobras por 4 anos.",
+      image: "/fotoW.jpeg",
       linkedin: "https://www.linkedin.com/in/walmir-moura-85547924/",
-      email: "carlos@example.com",
     },
   ]
 
@@ -20,13 +19,9 @@ export default function Team() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900">
-            Nossa <span className="text-primary">Equipe</span>
+            <span className="text-primary">Responsável</span>
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Contamos com engenheiros especializados em projetos de fachadas,
-            com vasta experiência no mercado brasileiro e internacional.
-          </p>
+          
         </div>
 
         <div className="max-w-4xl mx-auto">
