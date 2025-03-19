@@ -1,4 +1,6 @@
 import Image from "next/image"
+import { Button } from "../ui/button"
+import Link from "next/link"
 
 
 export default function Portfolio() {
@@ -6,37 +8,37 @@ export default function Portfolio() {
     {
       title: "Edifício Comercial Aurora",
       description: "Fachada em pele de vidro com sistema spider glass",
-      image: "/image/fachada1.png",
+      image: "/image/predio.jpg",
       category: "Comercial",
     },
     {
       title: "Residencial Horizonte",
       description: "Fachada ventilada com painéis de alumínio composto",
-      image: "/image/chao.png",
+      image: "/image/predio.jpg",
       category: "Residencial",
     },
     {
       title: "Centro Empresarial Vértice",
       description: "Fachada cortina com proteção solar integrada",
-      image: "/image/interno1.png",
+      image: "/image/predio.jpg",
       category: "Corporativo",
     },
     {
       title: "Shopping Meridiano",
       description: "Retrofit de fachada com sistema unitizado",
-      image: "/image/cobertura.png",
+      image: "/image/predio.jpg",
       category: "Comercial",
     },
     {
       title: "Hospital São Lucas",
       description: "Fachada com painéis fotovoltaicos integrados",
-      image: "/image/parede.png",
+      image: "/image/predio.jpg",
       category: "Institucional",
     },
     {
       title: "Condomínio Parque das Artes",
       description: "Fachada mista com elementos cerâmicos e vidro",
-      image: "/image/cobertura2.jpg",
+      image: "/image/predio.jpg",
       category: "Residencial",
     },
   ]
@@ -47,8 +49,8 @@ export default function Portfolio() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Nossos Projetos</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Conheça alguns dos nossos principais projetos de engenharia de fachadas realizados para clientes em diversos
-              segmentos.
+            Conheça alguns dos nossos principais projetos de engenharia de fachadas realizados para clientes em diversos
+            segmentos.
           </p>
         </div>
 
@@ -75,6 +77,11 @@ export default function Portfolio() {
             </div>
           ))}
         </div>
+          <div className="flex justify-center align-center mt-8">
+            <Button className="w-40" asChild>
+              <Link href={"/portfolio"}>
+              Veja Mais Projetos</Link></Button>
+          </div>
       </div>
     </section>
   )

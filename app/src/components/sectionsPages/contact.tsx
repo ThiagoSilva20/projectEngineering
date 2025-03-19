@@ -71,23 +71,23 @@ export default function Contact() {
                   <MapPin className="h-6 w-6 mr-4 mt-1" />
                   <div>
                     <p className="font-medium mb-1">Endereço</p>
-                    <p>Rua hidrolina, S/N Lote 36 Quadra 215</p>
-                    <p>Guaratiba - CEP 23031-160</p>
+                    <p>Rua Sem Fim, S/N</p>
+                    <p>CEP 99999-999</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <Phone className="h-6 w-6 mr-4 mt-1" />
                   <div>
                     <p className="font-medium mb-1">Telefone</p>
-                    <p>+55 21 4101-2053</p>
-                    <p>+ 55 21 98179-9852</p>
+                    <p>+55 21 9999-9999</p>
+                    <p>+ 55 21 99999-9999</p>
                   </div>
                 </div>
                 <div className="flex items-start">
                   <Mail className="h-6 w-6 mr-4 mt-1" />
                   <div>
                     <p className="font-medium mb-1">Email</p>
-                    <p>engenharia@wmoura.eng.br</p>
+                    <p>engenharia@teste.br</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -111,7 +111,7 @@ export default function Contact() {
                 <Button variant="outline" className="flex-1">
                   <Phone href="tel:+5521981799852" className="mr-2 h-4 w-4" /> Ligar Agora
                 </Button>
-                <Button onClick={() => window.open("https://wa.me/5521981799852", "_blank")} className="flex-1 bg-green-600 hover:bg-green-700"><FaWhatsapp />WhatsApp</Button>
+                <Button onClick={() => window.open("https://wa.me/5521993392724", "_blank")} className="flex-1 bg-green-600 hover:bg-green-700"><FaWhatsapp />WhatsApp</Button>
               </div>
             </div>
           </div>

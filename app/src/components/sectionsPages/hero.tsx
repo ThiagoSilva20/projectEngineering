@@ -9,7 +9,7 @@ export default function Hero() {
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/image/fachada3.png"
+          src="/image/fachada-predio-bonito.jpg"
           alt="Fachada moderna de edifício"
           fill
           className="object-cover"

@@ -32,7 +32,7 @@ export function Navbar() {
           "text-xl font-bold transition-colors",
           isScrolled ? "text-black" : "text-white"
         )}>
-          WMoura Engenharia
+          Site Engenharia
         </Link>
 
         {/* Desktop Navigation */}

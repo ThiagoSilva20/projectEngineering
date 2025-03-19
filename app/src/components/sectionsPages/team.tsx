@@ -6,11 +6,11 @@ import Link from "next/link"
 export default function Team() {
   const teamMembers = [
     {
-      name: "Walmir Moura",
+      name: "Pessoa",
       role: "Engenheiro",
-      bio: "Mais de 12 anos de experiência em engenharia, atuando como Diretor na W.Moura Engenharia, Proprietário da Workx Prestadora de Serviços e Fiscal de Contrato na Petrobras por 4 anos.",
-      image: "/fotoW.jpeg",
-      linkedin: "https://www.linkedin.com/in/walmir-moura-85547924/",
+      bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      image: "/image/mecanica.webp",
+      linkedin: "https://www.linkedin.com/in/thiago-silva-3599221ba/",
     },
   ]
 
@@ -45,7 +45,7 @@ export default function Team() {
                 <p className="text-primary font-semibold mb-4 inline-block">{member.role}</p>
                 <p className="text-gray-600 mb-6 leading-relaxed">{member.bio}</p>
                 <div className="flex space-x-3">
-                  <Link href="https://www.linkedin.com/in/walmir-moura-85547924/" target="_blank">
+                  <Link href="https://www.linkedin.com/in/thiago-silva-3599221ba/" target="_blank">
                   <Button 
                     variant="outline" 
                     size="sm" 

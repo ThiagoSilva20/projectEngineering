@@ -59,7 +59,7 @@ export default function Whatsappbutton() {
 
       <Button
         className="h-16 w-16 rounded-full bg-green-600 hover:bg-green-700 shadow-lg"
-        onClick={() => window.open("https://wa.me/5521981799852", "_blank")}
+        onClick={() => window.open("https://wa.me/5521993392724", "_blank")}
       >
         <FaWhatsapp className="h-8 w-8" />
         <span className="sr-only">Contato via WhatsApp</span>
