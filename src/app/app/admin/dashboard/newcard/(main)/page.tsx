@@ -6,13 +6,13 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 
-export default function NewCard() {
+export default function AdicionarProjeto() {
   return (
     <main className="bg-background">
       <div className="flex h-full flex-col">
         <header className="border-b">
           <div className="flex h-16 items-center px-6">
-            <h1 className="text-lg font-medium">Adicionar Novo Item</h1>
+            <h1 className="text-lg font-medium">Adicionar Projeto</h1>
           </div>
         </header>
         <main className="flex-1 p-6">
@@ -27,55 +27,56 @@ export default function NewCard() {
               <form>
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="title">Título</Label>
-                    <Input id="title" placeholder="Digite o título do projeto" required />
+                    <Label htmlFor="titulo">Título</Label>
+                    <Input id="titulo" placeholder="Digite o título do projeto" required />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="mainImage">Imagem Destaque</Label>
-                    <Input id="mainImage" type="file" accept="image/*" required />
+                    <Label htmlFor="imagemDestaque">Imagem Destaque</Label>
+                    <Input id="imagemDestaque" type="file" accept="image/*" required />
                   </div>
 
                   <div className="space-y-2">
                     <Label>Imagens Adicionais</Label>
                     <div className="grid grid-cols-3 gap-4">
                       <div>
-                        <Input id="image1" type="file" accept="image/*" />
+                        <Input id="imagem1" type="file" accept="image/*" />
                       </div>
                       <div>
-                        <Input id="image2" type="file" accept="image/*" />
+                        <Input id="imagem2" type="file" accept="image/*" />
                       </div>
                       <div>
-                        <Input id="image3" type="file" accept="image/*" />
+                        <Input id="imagem3" type="file" accept="image/*" />
                       </div>
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="description">Descrição</Label>
-                    <Textarea id="description" placeholder="Descreva o projeto em detalhes" rows={4} required />
+                    <Label htmlFor="descricao">Descrição</Label>
+                    <Textarea id="descricao" placeholder="Descreva o projeto em detalhes" rows={4} required />
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="client">Cliente</Label>
-                      <Input id="client" placeholder="Nome do cliente" required />
+                      <Label htmlFor="cliente">Cliente</Label>
+                      <Input id="cliente" placeholder="Nome do cliente" required />
                     </div>
 
                     <div className="space-y-2">
-                      <Label htmlFor="location">Localização</Label>
-                      <Input id="location" placeholder="Cidade, Estado" required />
+                      <Label htmlFor="localizacao">Localização</Label>
+                      <Input id="localizacao" placeholder="Cidade, Estado" required />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="year">Ano</Label>
+                    <Label htmlFor="ano">Ano</Label>
                     <Input
-                      id="year"
+                      id="ano"
                       type="number"
                       placeholder="2025"
                       min="1900"
                       max="2100"
+                      defaultValue="2025"
                       required
                     />
                   </div>

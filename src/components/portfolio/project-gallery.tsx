@@ -1,13 +1,9 @@
 "use client"
 
+import { Projeto } from "@prisma/client"
 import Image from "next/image"
-import { useEffect, useState } from "react"
+import {useState } from "react"
 
-// Definindo a interface para o projeto
-interface Projeto {
-  id: string
-  imagensAdicionais?: string[]
-}
 
 // Tipando as props do componente
 interface ProjectGalleryProps {
@@ -16,25 +12,18 @@ interface ProjectGalleryProps {
 
 export function ProjectGallery({ projeto }: ProjectGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
-  const [imagens, setImagens] = useState<string[]>([])
-
-  useEffect(() => {
-    if (projeto?.imagensAdicionais) {
-      setImagens(projeto.imagensAdicionais)
-    }
-  }, [projeto])
 
   return (
     <>
       <div className="grid grid-cols-3 gap-4">
-        {imagens.map((imagem, index) => (
+        {projeto.imagensAdicionais.map((imagem, index) => (
           <div
             key={index}
             className="relative h-32 rounded-lg overflow-hidden cursor-pointer"
             onClick={() => setSelectedImage(index)}
           >
             <Image
-              src="/image/mecanica.webp"
+              src={imagem}
               alt=""
               fill
               className="object-cover hover:scale-105 transition-transform duration-300"
@@ -51,7 +40,7 @@ export function ProjectGallery({ projeto }: ProjectGalleryProps) {
           <div className="max-w-4xl p-4 relative">
             <div className="relative h-[80vh] w-full">
               <Image
-                src=""
+                src={projeto.imagensAdicionais[selectedImage]}
                 alt="Imagem em destaque"
                 fill
                 className="object-contain"

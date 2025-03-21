@@ -40,15 +40,9 @@ model Projeto {
   dataCriacao    DateTime @default(now())
   usuarioId      String?
   usuario        User?    @relation(fields: [usuarioId], references: [id])
-  imagensAdicionais ImagemAdicional[]
+  imagensAdicionais String[]
 }
 
-model ImagemAdicional {
-  id        String  @id @default(uuid())
-  url       String
-  projetoId String
-  projeto   Projeto @relation(fields: [projetoId], references: [id], onDelete: Cascade)
-}
 model Account {
   userId            String
   type              String

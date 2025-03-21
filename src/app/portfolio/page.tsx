@@ -6,12 +6,12 @@ import { PortfolioStats } from "@/components/portfolio/portfolio-stats"
 import { PortfolioContact } from "@/components/portfolio/portfolio-contact"
 
 
-export default function PortfolioPage() {
+export default async function PortfolioPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">    
 
       <PortfolioHeader />
-      <PortfolioFeatured />
+      <PortfolioFeatured  />
       <PortfolioFilter />
       <PortfolioGrid />
       <PortfolioStats />
