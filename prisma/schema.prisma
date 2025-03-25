@@ -32,11 +32,11 @@ model User{
 model Projeto {
   id             String   @id @default(uuid())
   titulo         String
-  imagemDestaque String?
+  imagemDestaque String[]
   descricao      String
   cliente        String?
   localizacao    String?
-  ano            Int
+  ano            String?
   dataCriacao    DateTime @default(now())
   usuarioId      String?
   usuario        User?    @relation(fields: [usuarioId], references: [id])

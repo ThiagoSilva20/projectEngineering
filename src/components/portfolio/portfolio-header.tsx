@@ -10,11 +10,11 @@ export function PortfolioHeader() {
           {/* Link de voltar com melhor posicionamento e feedback visual */}
           <div className="mb-8">
             <Link 
-              href="/portfolio" 
+              href="/" 
               className="inline-flex items-center text-gray-600 hover:text-blue-600 transition-colors duration-200 group"
             >
               <ArrowLeft className="mr-2 h-4 w-4 group-hover:translate-x-[-2px] transition-transform" />
-              Voltar para Portfólio
+              Voltar para a página inicial
             </Link>
           </div>
           

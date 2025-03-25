@@ -1,68 +1,84 @@
-/* eslint-disable @next/next/no-img-element */
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Plus } from "lucide-react"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { Plus, Eye } from "lucide-react"
 import { getProjetos } from "@/app/app/actions/actions"
 import Link from "next/link"
+import Image from "next/image"
 
 export default async function ProjectsPage() {
   const projects = await getProjetos()
-  
+
   if (!projects || projects.length === 0) {
     return (
-      <div className="flex h-full flex-col items-center justify-center p-6">
-        <h2 className="text-xl font-medium text-gray-600 mb-4">Nenhum projeto encontrado</h2>
-        <Button asChild>
-          <Link href="/app/admin/dashboard/newcard">
-            <Plus className="mr-2 h-4 w-4" />
-            Criar Primeiro Projeto
+      <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gray-50">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold text-gray-800 mb-6">Nenhum projeto encontrado</h1>
+          <Link href="/app/admin/dashboard/newcard" className="inline-block">
+            <Button className="flex items-center gap-2">
+              <Plus className="h-5 w-5" />
+              Criar Primeiro Projeto
+            </Button>
           </Link>
-        </Button>
+        </div>
       </div>
     )
   }
-  
+
   return (
-    <main className="h-full flex flex-col">
-      <header className="border-b">
-        <div className="flex h-16 items-center justify-between max-w-7xl mx-auto px-6 w-full">
-          <h1 className="text-xl font-medium">Projetos</h1>
-          <Button asChild size="sm">
-            <Link href="/app/admin/dashboard/newcard">
-              <Plus className="mr-2 h-4 w-4" />
+    <TooltipProvider>
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex justify-between items-center mb-8">
+          <h1 className="text-4xl font-bold text-gray-900">Projetos</h1>
+          <Link href="/app/admin/dashboard/newcard" className="inline-block">
+            <Button className="flex items-center gap-2">
+              <Plus className="h-5 w-5" />
               Novo Projeto
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </div>
-      </header>
-      
-      <div className="flex-1 overflow-auto p-6">
-        <div className="container mx-auto">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {projects.map((project) => (
-              <Card key={project.id} className="overflow-hidden transition-all duration-200 hover:shadow-md flex flex-col">
-                <div className="aspect-video w-full overflow-hidden bg-muted">
-                  <img
-                    src={project.imagemDestaque || "/placeholder.svg"}
-                    alt={project.titulo}
-                    className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project) => (
+            <Card key={project.id} className="hover:shadow-lg transition-shadow duration-300">
+              <CardHeader>
+                <CardTitle className="text-xl truncate">{project.titulo}</CardTitle>
+                {project.descricao && (
+                  <CardDescription className="line-clamp-2">
+                    {project.descricao}
+                  </CardDescription>
+                )}
+              </CardHeader>
+              <CardContent>
+                {project.imagemDestaque && (
+                  <Image 
+                    src={project.imagemDestaque[0]} 
+                    alt={project.titulo} 
+                    className="w-full h-48 object-cover rounded-md mb-4"
                   />
-                </div>
-                <CardContent className="p-4 flex flex-col flex-1">
-                  <h3 className="text-xl font-semibold mb-4">{project.titulo}</h3>
-                  <div className="mt-auto">
-                    <Button asChild variant="outline" className="w-full">
-                      <Link href={`/app/admin/dashboard/cards/${project.id}`}>
-                        Visualizar
+                )}
+              </CardContent>
+              <CardFooter className="flex justify-end">
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <div>
+                      <Link href={`/portfolio/${project.id}`}>
+                        <Button variant="outline" className="flex items-center gap-2">
+                          <Eye className="h-4 w-4" />
+                          Visualizar Projeto
+                        </Button>
                       </Link>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                    </div>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    Visualizar detalhes do projeto
+                  </TooltipContent>
+                </Tooltip>
+              </CardFooter>
+            </Card>
+          ))}
         </div>
       </div>
-    </main>
+    </TooltipProvider>
   )
 }

@@ -1,47 +1,30 @@
-import Image from "next/image"
-import { Button } from "../ui/button"
-import Link from "next/link"
+import Image from "next/image";
+import { Button } from "../ui/button";
+import Link from "next/link";
+import { getProjetos } from "@/app/app/actions/actions"; // Função fictícia para buscar projetos
 
+// Tipando os dados do projeto (ajuste conforme seu schema)
+interface Projeto {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+}
 
-export default function Portfolio() {
-  const projects = [
-    {
-      title: "Edifício Comercial Aurora",
-      description: "Fachada em pele de vidro com sistema spider glass",
-      image: "/image/predio.jpg",
-      category: "Comercial",
-    },
-    {
-      title: "Residencial Horizonte",
-      description: "Fachada ventilada com painéis de alumínio composto",
-      image: "/image/predio.jpg",
-      category: "Residencial",
-    },
-    {
-      title: "Centro Empresarial Vértice",
-      description: "Fachada cortina com proteção solar integrada",
-      image: "/image/predio.jpg",
-      category: "Corporativo",
-    },
-    {
-      title: "Shopping Meridiano",
-      description: "Retrofit de fachada com sistema unitizado",
-      image: "/image/predio.jpg",
-      category: "Comercial",
-    },
-    {
-      title: "Hospital São Lucas",
-      description: "Fachada com painéis fotovoltaicos integrados",
-      image: "/image/predio.jpg",
-      category: "Institucional",
-    },
-    {
-      title: "Condomínio Parque das Artes",
-      description: "Fachada mista com elementos cerâmicos e vidro",
-      image: "/image/predio.jpg",
-      category: "Residencial",
-    },
-  ]
+export default async function Portfolio() {
+  // Busca os projetos dinamicamente
+  const rawProjects = await getProjetos();
+  const allProjects: Projeto[] = rawProjects.map((project: any) => ({
+    id: project.id,
+    title: project.titulo,
+    description: project.descricao,
+    image: project.imagemDestaque[0] || "/placeholder.svg",
+    category: project.cliente || "Sem Categoria",
+  }));
+  
+  // Limita a exibição a 6 projetos
+  const projects = allProjects.slice(0, 6);
 
   return (
     <section id="portfolio" className="py-20">
@@ -55,8 +38,8 @@ export default function Portfolio() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
+          {projects.map((project) => (
+            <div key={project.id} className="group relative overflow-hidden rounded-lg shadow-lg">
               <div className="relative h-80 w-full overflow-hidden">
                 <Image
                   src={project.image || "/placeholder.svg"}
@@ -72,18 +55,16 @@ export default function Portfolio() {
                 </span>
                 <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
                 <p className="text-white/80 mb-4">{project.description}</p>
-
               </div>
             </div>
           ))}
         </div>
-          <div className="flex justify-center align-center mt-8">
-            <Button className="w-40" asChild>
-              <Link href={"/portfolio"}>
-              Veja Mais Projetos</Link></Button>
-          </div>
+        <div className="flex justify-center align-center mt-8">
+          <Button className="w-40" asChild>
+            <Link href={"/portfolio"}>Veja Mais Projetos</Link>
+          </Button>
+        </div>
       </div>
     </section>
-  )
+  );
 }
-

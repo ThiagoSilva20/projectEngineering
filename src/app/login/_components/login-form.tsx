@@ -54,7 +54,7 @@ export default function Page() {
             <div className="size-9 rounded-md bg-gradient-to-r from-primary/80 to-primary p-1 flex items-center justify-center">
               <LandmarkIcon className="size-5 text-white" />
             </div>
-            <CardTitle className="text-2xl font-bold">Fink</CardTitle>
+            <CardTitle className="text-2xl font-bold">Admin</CardTitle>
           </div>
           <CardDescription>
             Entre com suas credenciais para acessar o sistema
@@ -76,16 +76,9 @@ export default function Page() {
               )}
             </div>
             <div className="space-y-2">
-              <div className="flex items-center justify-between">
+
                 <Label htmlFor="password">Senha</Label>
-                <Button
-                  variant="link"
-                  className="h-auto p-0 text-xs"
-                  type="button"
-                >
-                  Esqueceu a senha?
-                </Button>
-              </div>
+              
               <Input
                 id="password"
                 type="password"

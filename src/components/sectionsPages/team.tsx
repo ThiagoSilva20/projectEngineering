@@ -9,7 +9,7 @@ export default function Team() {
       name: "Pessoa",
       role: "Engenheiro",
       bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      image: "/image/mecanica.webp",
+      image: "/image/mecanica.jpg",
       linkedin: "https://www.linkedin.com/in/thiago-silva-3599221ba/",
     },
   ]
