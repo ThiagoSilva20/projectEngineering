@@ -255,7 +255,7 @@ export default function AdicionarProjeto() {
                     <FormField
                       control={form.control}
                       name="imagensAdicionais"
-                      render={({ field }) => (
+                      render={() => (
                         <FormItem>
                           <FormLabel className="text-sm font-medium text-gray-700">Imagens Adicionais</FormLabel>
                           <FormControl>
