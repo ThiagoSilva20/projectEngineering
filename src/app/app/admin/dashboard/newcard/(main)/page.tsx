@@ -48,7 +48,7 @@ export default function AdicionarProjeto() {
     },
   });
 
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null!);
 
   const handleUploadFoto = async (
     event: React.ChangeEvent<HTMLInputElement>
