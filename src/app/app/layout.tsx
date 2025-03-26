@@ -3,7 +3,7 @@ import { Sidebar } from "./admin/dashboard/(main)/_components/sidebar";
 
 export default function Layout({children}: PropsWithChildren){
     return(
-    <div className="ml-14 p-4">
+    <div className="md:ml-14 ">
         <Sidebar/>
         {children}
     </div>)

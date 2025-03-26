@@ -3,8 +3,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
 import { Home, LogOut, Package, PanelBottom, ShoppingBag } from "lucide-react";
 import { LuPackagePlus } from "react-icons/lu";
-import { IoIosPersonAdd } from "react-icons/io";
-import { IoSettingsOutline } from "react-icons/io5";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
 import { FaRegTrashAlt } from "react-icons/fa";
 
@@ -94,7 +92,7 @@ export function Sidebar() {
       </aside>
 
       {/* Mobile */}
-      <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-64 sm:hidden">
+      <div className="flex flex-col sm:gap-4 sm:py-4  sm:pl-64 sm:hidden">
         <header className="sticky top-0 z-30 flex h-14 
         items-center sm:hidden sm:h-auto sm:bg-transparent sm:px-6">
           <Sheet>
@@ -115,30 +113,25 @@ export function Sidebar() {
                   <Package className="h-5 w-5" />
                   <span className="sr-only">Logo do Projeto</span>
                 </Link>
-                <Link href="#" className="flex items-center gap-4 px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                <Link href="/app/admin/dashboard" className="flex items-center gap-4 px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
                   prefetch={false} >
                   <Home className="h-5 w-5" />
                   Inicio
                 </Link>
-                <Link href="#" className="flex items-center gap-4 px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                <Link href="/app/admin/dashboard/cards" className="flex items-center gap-4 px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
                   prefetch={false} >
                   <ShoppingBag className="h-5 w-5" />
-                  Pedidos
+                  Projetos
                 </Link>
-                <Link href="#" className="flex items-center gap-4 px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                <Link href="/app/admin/dashboard/newcard" className="flex items-center gap-4 px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
                   prefetch={false} >
                   <LuPackagePlus className="h-5 w-5" />
-                  Adicionar projeto
+                  Adicionar Projetos
                 </Link>
-                <Link href="#" className="flex items-center gap-4 px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
+                <Link href="/app/admin/dashboard/removecard" className="flex items-center gap-4 px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
                   prefetch={false} >
-                  <IoIosPersonAdd className="h-5 w-5" />
-                  Clientes
-                </Link>
-                <Link href="#" className="flex items-center gap-4 px-3 py-2 text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors"
-                  prefetch={false} >
-                  <IoSettingsOutline className="h-5 w-5" />
-                  Configurações
+                  <FaRegTrashAlt className="h-5 w-5" />
+                  Remover Projetos
                 </Link>
               </nav>
             </SheetContent>
