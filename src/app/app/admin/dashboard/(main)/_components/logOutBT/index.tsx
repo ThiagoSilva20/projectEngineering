@@ -20,6 +20,7 @@ export default function LogoutButton() {
                 await logout()
                 // The redirect will happen in the server action
               } catch (error) {
+                console.error('Erro ao sair:', error)
                 toast.error('Erro ao sair', {
                   description: 'Não foi possível encerrar a sessão. Tente novamente.'
                 })

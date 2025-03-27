@@ -237,6 +237,8 @@ export default function AdicionarProjeto() {
                               <div key={index} className="relative group">
                                 <Image
                                   src={URL.createObjectURL(image) || "/image.png"}
+                                  width={100}
+                                  height={100}
                                   alt={`Imagem ${index + 1}`}
                                   className="h-24 w-24 rounded-lg object-cover shadow-sm"
                                 />
@@ -286,6 +288,8 @@ export default function AdicionarProjeto() {
                               <div key={index} className="relative group">
                                 <Image
                                   src={URL.createObjectURL(image) || "/image.png"}
+                                  width={100}
+                                  height={100}
                                   alt={`Imagem ${index + 1}`}
                                   className="h-24 w-24 rounded-lg object-cover shadow-sm"
                                 />
