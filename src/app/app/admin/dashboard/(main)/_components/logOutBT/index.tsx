@@ -9,25 +9,24 @@ import {
 } from "@/components/ui/tooltip"
 
 export default function LogoutButton() {
+  const handleLogout = async () => {
+    try {
+      await logout()
+      // The redirect will happen in the server action
+    } catch (error) {
+      console.error('Erro ao sair:', error)
+      toast.error('Erro ao sair', {
+        description: 'Não foi possível encerrar a sessão. Tente novamente.'
+      })
+    }
+  }
+
   return (
     <div className="mt-auto">
       <Tooltip>
         <TooltipTrigger asChild>
           <button 
-            onClick={async () => {
-              try {
-                await logout()
-                // The redirect will happen in the server action
-              } catch (_error) {
-                // Now we're using the error parameter
-                console.error('Erro ao sair:', _error)
-                toast.error('Erro ao sair', {
-                  description: _error instanceof Error 
-                    ? _error.message 
-                    : 'Não foi possível encerrar a sessão. Tente novamente.'
-                })
-              }
-            }} 
+            onClick={handleLogout} 
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground" 
           >
             <LogOut className="h-5 w-5 text-red-500" />
