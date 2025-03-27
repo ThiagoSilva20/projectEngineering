@@ -4,6 +4,8 @@ import { db } from "@/lib/db"
 import { revalidatePath } from "next/cache"
 import { cardSchema } from "../admin/dashboard/newcard/(main)/schema"
 import { prisma } from "@/services/database"
+import { cookies } from "next/headers"
+import { redirect } from "next/navigation"
 
 export async function getProjetos() {
 
@@ -90,4 +92,16 @@ export const createCard = async (data: CardsProps) => {
       throw new Error("Falha ao criar o card")
   } 
 
+}
+
+export async function logout() {
+  const cookieStore = await cookies();
+  try {
+    cookieStore.delete('authenticationjs.session-token');
+    // Outras lógicas de logout, se houver
+  } catch (error) {
+    console.error("Erro ao realizar logout:", error);
+    throw new Error("Falha ao realizar logout");
+  }
+  redirect('/login'); // Fora do try/catch
 }
