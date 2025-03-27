@@ -18,12 +18,12 @@ export default function LogoutButton() {
               try {
                 await logout()
                 // The redirect will happen in the server action
-              } catch (error) {
+              } catch (_error) {
                 // Now we're using the error parameter
-                console.error('Erro ao sair:', error)
+                console.error('Erro ao sair:', _error)
                 toast.error('Erro ao sair', {
-                  description: error instanceof Error 
-                    ? error.message 
+                  description: _error instanceof Error 
+                    ? _error.message 
                     : 'Não foi possível encerrar a sessão. Tente novamente.'
                 })
               }
