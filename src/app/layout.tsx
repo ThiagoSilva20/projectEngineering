@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 
 
 export const metadata: Metadata = {
-  title: "WMoura - Engenharia",
-  description: "Site da WMoura Engenharia",
+  title: "Site Engenharia",
+  description: "Site de Engenharia",
 };
 
 export default function RootLayout({
