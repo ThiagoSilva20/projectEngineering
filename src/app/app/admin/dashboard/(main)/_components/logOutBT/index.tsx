@@ -1,5 +1,4 @@
 "use client"
-
 import { logout } from '@/app/app/actions/actions'
 import { LogOut } from 'lucide-react'
 import { toast } from 'sonner'
@@ -20,9 +19,12 @@ export default function LogoutButton() {
                 await logout()
                 // The redirect will happen in the server action
               } catch (error) {
+                // Now we're using the error parameter
                 console.error('Erro ao sair:', error)
                 toast.error('Erro ao sair', {
-                  description: 'Não foi possível encerrar a sessão. Tente novamente.'
+                  description: error instanceof Error 
+                    ? error.message 
+                    : 'Não foi possível encerrar a sessão. Tente novamente.'
                 })
               }
             }} 
