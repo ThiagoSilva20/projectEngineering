@@ -14,12 +14,7 @@ export function PortfolioStats() {
       label: "Clientes Satisfeitos",
       description: "Empresas e incorporadoras",
     },
-    {
-      icon: <Award className="h-10 w-10 text-primary" />,
-      value: "15",
-      label: "Prêmios de Excelência",
-      description: "Reconhecimento do mercado",
-    },
+    
     {
       icon: <Clock className="h-10 w-10 text-primary" />,
       value: "12+",

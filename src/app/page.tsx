@@ -6,6 +6,7 @@ import  Contact  from "@/components/sectionsPages/contact"
 import  { Whatsappbutton }  from "@/components/sectionsPages/whatsappbutton"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
+import  ImageGallery  from "@/components/sectionsPages/imageGallery"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar/>
       <Hero />
       <Portfolio />
+      <ImageGallery />
       <Team />  
       <Testimonials />
       <Contact />

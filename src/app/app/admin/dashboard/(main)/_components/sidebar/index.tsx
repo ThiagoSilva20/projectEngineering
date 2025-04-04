@@ -4,10 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
 import { Home, Package, PanelBottom, ShoppingBag } from "lucide-react";
-import { LuPackagePlus } from "react-icons/lu";
+import { LuImagePlus, LuPackagePlus } from "react-icons/lu";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@radix-ui/react-tooltip";
 import { FaRegTrashAlt } from "react-icons/fa";
 import  LogOutBT  from "@/app/app/admin/dashboard/(main)/_components/logOutBT";
+import { IoImageOutline } from "react-icons/io5";
+
 
 export function Sidebar() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -62,7 +64,31 @@ export function Sidebar() {
           Adicionar Projetos
         </TooltipContent>
       </Tooltip>
-      
+
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Link href="/app/admin/dashboard/gallery" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground" prefetch={false}>
+            <IoImageOutline  className="h-5 w-5" />
+            <span className="sr-only">imagens</span>
+          </Link>
+        </TooltipTrigger>
+        <TooltipContent className="pl-3 font-semibold text-muted-foreground uppercase tracking-wide" side="right">
+          imagens
+        </TooltipContent>
+      </Tooltip>
+
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <Link href="/app/admin/dashboard/newgallery" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground" prefetch={false}>
+            <LuImagePlus className="h-5 w-5" />
+            <span className="sr-only">Adicionar Imagens</span>
+          </Link>
+        </TooltipTrigger>
+        <TooltipContent className="pl-3 font-semibold text-muted-foreground uppercase tracking-wide" side="right">
+          Adicionar Imagens
+        </TooltipContent>
+      </Tooltip>
+
       <div className="mt-auto">
         <LogOutBT />
       </div>

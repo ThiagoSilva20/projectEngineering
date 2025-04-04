@@ -97,3 +97,14 @@ model Authenticator {
  
   @@id([userId, credentialID])
 }
+
+model Gallery {
+  id          String       @id @default(uuid())
+  title       String
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  location    String   // Localização onde a imagem foi tirada
+  service     String   // Serviço relacionado à imagem
+  images      String[]
+}
+

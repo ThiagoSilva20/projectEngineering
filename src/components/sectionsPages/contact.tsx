@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function Contact() {
@@ -21,19 +21,11 @@ export default function Contact() {
           <div>
             <h3 className="text-2xl font-bold mb-6">Informações de Contato</h3>
             <div className="space-y-6">
-              <div className="flex items-start">
-                <MapPin className="h-6 w-6 mr-4 mt-1 text-green-400" />
-                <div>
-                  <p className="font-medium mb-1">Endereço</p>
-                  <p>Rua Sem Fim, S/N</p>
-                  <p>CEP 99999-999</p>
-                </div>
-              </div>
+              
               <div className="flex items-start">
                 <Phone className="h-6 w-6 mr-4 mt-1 text-green-400" />
                 <div>
                   <p className="font-medium mb-1">Telefone</p>
-                  <p>+55 21 9999-9999</p>
                   <p>+ 55 21 99999-9999</p>
                 </div>
               </div>
@@ -64,13 +56,7 @@ export default function Contact() {
               WhatsApp ou ligue diretamente para nossa central de atendimento.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button
-                variant="outline"
-                className="flex-1 border-gray-800 text-gray-800 hover:bg-gray-50"
-                onClick={() => (window.location.href = "tel:+5521981799852")}
-              >
-                <Phone className="mr-2 h-4 w-4" /> Ligar Agora
-              </Button>
+
               <Button
                 onClick={() =>
                   window.open("https://wa.me/5521993392724", "_blank")
