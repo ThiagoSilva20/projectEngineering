@@ -10,7 +10,7 @@ import  ImageGallery  from "@/components/sectionsPages/imageGallery"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="h-screen bg-white">
       <Navbar/>
       <Hero />
       <Portfolio />

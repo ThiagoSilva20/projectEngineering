@@ -37,10 +37,10 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative pt-24 vh-100 pb-16 md:pt-32 md:pb-24 overflow-hidden"
+      className="relative pt-24 vh-100 pb-16 md:pt-32 md:pb-24 overflow-hidden h-[80%]"
     >
       {/* Background with overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 ">
         <Image
           src={currentItem.image}
           alt={currentItem.title}
