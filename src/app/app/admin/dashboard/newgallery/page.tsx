@@ -1,5 +1,10 @@
 "use client";
 
+/*
+eslint-disable @typescript-eslint/no-unused-vars
+*/ 
+// Removido o eslint-disable para @typescript-eslint/no-explicit-any pois não está sendo usado
+
 import { useState, useRef, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -72,7 +77,7 @@ export default function AdicionarGaleria() {
         }
       });
     };
-  }, [imageFiles]);
+  }, [imageFiles, previewUrls]); // Adicionada a dependência previewUrls
 
   const handleUploadImage = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;

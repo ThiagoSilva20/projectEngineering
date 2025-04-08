@@ -13,12 +13,11 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
-import { Eye, Trash2 } from "lucide-react";
+import {  Trash2 } from "lucide-react";
 import { deleteGallery } from "@/app/app/actions/actions";
 import { toast } from "sonner";
-import { useRouter } from "next/navigation";
 
 interface CardItemProps {
   id: string;
@@ -28,7 +27,6 @@ interface CardItemProps {
 }
 
 const CardItem = ({ title, service, images, id }: CardItemProps) => {
-  const router = useRouter();
 
   const handleConfirmDelete = async () => {
     try {
@@ -36,7 +34,7 @@ const CardItem = ({ title, service, images, id }: CardItemProps) => {
       toast.success("Galeria excluída com sucesso!");
       window.location.reload();
     } catch (error) {
-      toast.error("Erro ao excluir a galeria.");
+      toast.error(error + ": Erro ao excluir a galeria.");
     }
   };
 

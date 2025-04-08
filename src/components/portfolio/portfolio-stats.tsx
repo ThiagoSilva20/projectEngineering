@@ -1,4 +1,4 @@
-import { Building2, Users, Award, Clock } from "lucide-react"
+import { Building2, Users, Clock } from "lucide-react"
 
 export function PortfolioStats() {
   const stats = [

@@ -8,7 +8,7 @@ interface RawProjeto {
   titulo: string;
   descricao: string;
   imagemDestaque?: string[];
-  categoria?: string;
+
 }
 
 interface Projeto {
@@ -16,18 +16,19 @@ interface Projeto {
   title: string;
   description: string;
   image: string;
-  category: string;
+
 }
 
 export default async function Portfolio() {
-  const rawProjects: RawProjeto[] = await getProjetos();
 
+  const rawProjects: RawProjeto[] = await getProjetos();
   const allProjects: Projeto[] = rawProjects.map((project) => ({
+
     id: project.id,
     title: project.titulo,
     description: project.descricao,
     image: project.imagemDestaque?.[0] ?? "/placeholder.svg",
-    category: project.categoria ?? "Sem Categoria",
+
   }));
 
   const projects = allProjects.slice(0, 6);
@@ -57,9 +58,6 @@ export default async function Portfolio() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70"></div>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <span className="inline-block bg-primary/90 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">
-                  {project.category}
-                </span>
                 <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
                 <p className="text-white/80 mb-4">{project.description}</p>
               </div>

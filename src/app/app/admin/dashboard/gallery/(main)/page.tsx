@@ -2,21 +2,15 @@
 
 import { Button } from "@/components/ui/button";
 import {
-  Tooltip,
-  TooltipContent,
   TooltipProvider,
-  TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import { Plus, Eye, Trash2 } from "lucide-react";
-import { getGallery, deleteGallery } from "@/app/app/actions/actions";
-import { deleteImagemGallery } from "@/services/supabase/actions";
+import { Plus} from "lucide-react";
+import { getGallery} from "@/app/app/actions/actions";
 import Link from "next/link";
 import { toast } from "sonner";
 import { useState, useEffect } from "react";
 import CardItem from "./_components/card-item";
-
-
 
 type Gallery = {
   id: string;
@@ -28,9 +22,7 @@ type Gallery = {
 
 export default function GalleryPage() {
   const [galleries, setGalleries] = useState<Gallery[]>([]);
-  const [galleryToDelete, setGalleryToDelete] = useState<Gallery | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-
 
   useEffect(() => {
     const loadGalleries = async () => {

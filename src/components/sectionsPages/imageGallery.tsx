@@ -1,3 +1,7 @@
+/* 
+eslint-disable @typescript-eslint/ban-ts-comment
+*/
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -166,7 +170,6 @@ export default function ImageGallery() {
             className="object-cover"
             priority
             onError={(e) => {
-              // @ts-ignore - TypeScript não reconhece a propriedade src em HTMLImageElement
               e.currentTarget.src = placeholderImage;
             }}
           />
@@ -230,10 +233,7 @@ export default function ImageGallery() {
           alt={`Miniatura ${index + 1}`}
           fill
           className="object-cover"
-          onError={(e) => {
-            // @ts-ignore - TypeScript não reconhece a propriedade src em HTMLImageElement
-            e.currentTarget.src = placeholderImage;
-          }}
+          
               />
             </button>
           ))}
