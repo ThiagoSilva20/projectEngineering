@@ -103,7 +103,7 @@ export default function GalleryPage() {
         </div>
       </div>
 
-      {/* Modal de Confirmação */}
+
       
     </TooltipProvider>
   );

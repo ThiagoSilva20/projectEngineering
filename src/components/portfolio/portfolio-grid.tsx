@@ -17,7 +17,7 @@ export default async function PortfolioGrid() {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projetos.map((projeto) => (
+          {projetos.map((projeto, index) => (
             <Card 
               key={projeto.id} 
               className="overflow-hidden flex flex-col bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-none group"
@@ -27,6 +27,8 @@ export default async function PortfolioGrid() {
                   src={projeto.imagemDestaque[0] || "/placeholder.svg?height=1000&width=1600"}
                   alt={projeto.titulo}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority={index === 0}
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

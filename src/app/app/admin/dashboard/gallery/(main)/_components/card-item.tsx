@@ -6,16 +6,6 @@ import {
   CardDescription,
   CardFooter,
 } from "@/components/ui/card";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
 
 import Image from "next/image";
 import {
@@ -59,32 +49,28 @@ const CardItem = ({ title, service, images, id }: CardItemProps) => {
         )}
       </CardHeader>
       <CardContent>
-        {images.length > 0 && (
+        {images.length > 0 ? (
           <Image
             src={images[0]}
             alt={title}
             width={500}
             height={300}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
             className="w-full h-48 object-cover rounded-md mb-4"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = "/fallback.jpg";
-            }}
+            priority // Remova isso se o CardItem não estiver acima da dobra
+          />
+        ) : (
+          <Image
+            src="/fallback.jpg"
+            alt="Imagem não disponível"
+            width={500}
+            height={300}
+            className="w-full h-48 object-cover rounded-md mb-4"
           />
         )}
       </CardContent>
       <CardFooter className="flex justify-between items-center">
         <div className="flex gap-2">
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Link href={`/portfolio/${id}`}>
-                <Button variant="outline" className="flex items-center gap-2">
-                  <Eye className="h-4 w-4" />
-                  Visualizar
-                </Button>
-              </Link>
-            </TooltipTrigger>
-            <TooltipContent>Visualizar detalhes da galeria</TooltipContent>
-          </Tooltip>
 
           <Tooltip>
             <TooltipTrigger asChild>
@@ -103,4 +89,5 @@ const CardItem = ({ title, service, images, id }: CardItemProps) => {
     </Card>
   );
 };
+
 export default CardItem;
